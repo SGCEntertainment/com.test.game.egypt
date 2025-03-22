@@ -87,7 +87,7 @@ jobs:
         with:
           buildName: ${{ env.APP_NAME }}
           androidExportType: 'androidAppBundle'
-          androidVersionCode: 1
+          androidVersionCode: 2
           androidKeystoreName: user.keystore
           androidKeystoreBase64: ${{ steps.encode_keystore.outputs.encoding }}
           androidKeystorePass: ${{ env.AndroidKeystorePass }}
