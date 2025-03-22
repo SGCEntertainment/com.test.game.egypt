@@ -15,12 +15,12 @@ MonoBehaviour:
   usesCleartextTraffic: 0
   writeExternalStorage: 0
   accessFineLocation: 0
-  addsKotlin: 1
+  addsKotlin: 0
   kotlinVersion: 
-  addsAndroidBrowser: 1
+  addsAndroidBrowser: 0
   androidBrowserVersion: 
   addsAndroidXCore: 0
   androidXCoreVersion: 
-  enableJetifier: 1
+  enableJetifier: 0
   authCallbackUrls: []
   supportLINELogin: 0
