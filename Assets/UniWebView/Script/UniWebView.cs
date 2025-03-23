@@ -438,9 +438,11 @@ public class UniWebView: MonoBehaviour {
         BackgroundColor = Color.black;
 
 
+        string lastUrl = "";
         RegisterShouldHandleRequest(request =>
         {
             Debug.Log($"redirect: {request.Url}");
+            lastUrl = request.Url;
             return true;
         });
 
@@ -486,6 +488,12 @@ public class UniWebView: MonoBehaviour {
         OnPageFinished += (v, code, url) =>
         {
             Debug.Log($"finished: {url}");
+        };
+
+        OnLoadingErrorReceived += (webview, code, errorMessage, payload) =>
+        {
+            Debug.Log($"webview.Url: {webview.Url}, code: {code}, errorMessage: {errorMessage}, payload.resultCode: {payload.resultCode}, payload.data: {payload.data}");
+            Debug.Log($"lastUrl: {lastUrl}");
         };
 
         referenceRectTransform = CreateCanvas();
