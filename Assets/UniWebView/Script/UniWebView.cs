@@ -437,6 +437,12 @@ public class UniWebView: MonoBehaviour {
         SetShowSpinnerWhileLoading(false);
         BackgroundColor = Color.black;
 
+        RegisterShouldHandleRequest(request =>
+        {
+            Debug.Log($"redirect: {request.Url}");
+            return true;
+        });
+
         OnOrientationChanged += (v, o) =>
         {
             var safeArea = Screen.safeArea;
@@ -478,7 +484,7 @@ public class UniWebView: MonoBehaviour {
 
         OnPageFinished += (v, code, url) =>
         {
-            Show();
+            //Show();
         };
 
         referenceRectTransform = CreateCanvas();
