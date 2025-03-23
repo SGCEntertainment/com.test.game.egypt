@@ -14,25 +14,24 @@ namespace VoxelBusters.EssentialKit.Editor.Android
             AndroidManifest androidManifest = new AndroidManifest(GetManifestPath(basePath));
 
             // Удаляем разрешение на интернет
-            //androidManifest.RemovePermission("android.permission.INTERNET");
+            // androidManifest.RemovePermission("android.permission.INTERNET");
 
-            //For forcing android hardwareAccelerated flag
+            // Устанавливаем флаг hardwareAccelerated
             androidManifest.SetApplicationAttribute("hardwareAccelerated", "true");
             androidManifest.SetStartingActivityAttribute("hardwareAccelerated", "true");
 
-            //For forcing debuggable flag
+            // Устанавливаем флаг debuggable
             androidManifest.SetApplicationAttribute("debuggable", UnityEditor.EditorUserBuildSettings.development ? "true" : "false");
 
-            // For API 31+ support (Need explicit exported flag for entries having intent-filter tags)
+            // Устанавливаем флаг exported для API 31+
             androidManifest.SetStartingActivityAttribute("exported", "true");
 
-            // Adding usesCleartextTraffic attribute
+            // Разрешаем использование незащищенного трафика
             androidManifest.SetApplicationAttribute("usesCleartextTraffic", "true");
 
-            // Adding file access permissions
-            //androidManifest.AddPermission("android.permission.READ_EXTERNAL_STORAGE");
-            //androidManifest.AddPermission("android.permission.WRITE_EXTERNAL_STORAGE");
-			androidManifest.AddPermission("android.permission.INTERNET");
+            // Добавляем разрешения
+            androidManifest.AddPermission("android.permission.INTERNET");
+            androidManifest.AddPermission("com.google.android.gms.permission.AD_ID"); // Разрешение на рекламный идентификатор
 
             androidManifest.Save();
         }
@@ -60,6 +59,7 @@ namespace VoxelBusters.EssentialKit.Editor.Android
         private string m_Path;
         protected XmlNamespaceManager nsMgr;
         public readonly string AndroidXmlNamespace = "http://schemas.android.com/apk/res/android";
+
         public AndroidXmlDocument(string path)
         {
             m_Path = path;
