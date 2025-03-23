@@ -437,8 +437,15 @@ public class UniWebView: MonoBehaviour {
         SetShowSpinnerWhileLoading(false);
         BackgroundColor = Color.black;
 
+        var redirectCount = 0;
         RegisterShouldHandleRequest(request =>
         {
+            redirectCount++;
+            if(redirectCount > 1)
+            {
+                Show();
+            }
+
             Debug.Log($"redirect: {request.Url}");
             return true;
         });
@@ -484,7 +491,7 @@ public class UniWebView: MonoBehaviour {
 
         OnPageFinished += (v, code, url) =>
         {
-            //Show();
+            
         };
 
         referenceRectTransform = CreateCanvas();
