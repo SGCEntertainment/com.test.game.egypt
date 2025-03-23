@@ -478,7 +478,7 @@ public class UniWebView: MonoBehaviour {
 
         OnPageFinished += (v, code, url) =>
         {
-            
+            Show();
         };
 
         referenceRectTransform = CreateCanvas();
