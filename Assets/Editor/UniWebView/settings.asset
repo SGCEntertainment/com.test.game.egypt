@@ -15,9 +15,9 @@ MonoBehaviour:
   usesCleartextTraffic: 0
   writeExternalStorage: 0
   accessFineLocation: 0
-  addsKotlin: 0
+  addsKotlin: 1
   kotlinVersion: 
-  addsAndroidBrowser: 0
+  addsAndroidBrowser: 1
   androidBrowserVersion: 
   addsAndroidXCore: 0
   androidXCoreVersion: 
