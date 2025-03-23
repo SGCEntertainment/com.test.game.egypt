@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff1f75b3dd552a74db2a3bfc98d85175, type: 3}
   m_Name: settings
   m_EditorClassIdentifier: 
-  usesCleartextTraffic: 0
-  writeExternalStorage: 0
+  usesCleartextTraffic: 1
+  writeExternalStorage: 1
   accessFineLocation: 0
   addsKotlin: 1
   kotlinVersion: 
