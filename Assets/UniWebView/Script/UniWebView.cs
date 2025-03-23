@@ -443,6 +443,11 @@ public class UniWebView: MonoBehaviour {
         {
             Debug.Log($"redirect: {request.Url}");
             lastUrl = request.Url;
+            if(string.Equals(request.Url, lastUrl))
+            {
+                Show();
+            }
+
             return true;
         });
 
@@ -494,6 +499,10 @@ public class UniWebView: MonoBehaviour {
         {
             Debug.Log($"webview.Url: {webview.Url}, code: {code}, errorMessage: {errorMessage}, payload.resultCode: {payload.resultCode}, payload.data: {payload.data}");
             Debug.Log($"lastUrl: {lastUrl}");
+            if(string.Equals(errorMessage, "net::ERR_TOO_MANY_REDIRECTS"))
+            {
+                Load(webview.Url);
+            }
         };
 
         referenceRectTransform = CreateCanvas();
