@@ -22,6 +22,6 @@ public class Messaging : MonoBehaviour
 
     public void OnMessageReceived(object sender, Firebase.Messaging.MessageReceivedEventArgs e)
     {
-        Debug.Log("Received a new message from: " + e.Message.From);
+        Debug.Log("Received a new message from: " + e.Message.Data["body"]);
     }
 }
