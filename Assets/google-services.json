@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "919431900192",
+    "project_id": "com-test-egypt-game",
+    "storage_bucket": "com-test-egypt-game.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:919431900192:android:4e0f74af5e7a3affcaa045",
+        "android_client_info": {
+          "package_name": "com.test.egypt.game"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDo0L80rrZUAQKjCSYZG5-RPZEIYO3_t88"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
