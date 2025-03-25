@@ -20,6 +20,7 @@ using System;
 using System.Threading.Tasks;
 using System.Runtime.CompilerServices;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 /// <summary>
 /// Main class of UniWebView. Any `GameObject` instance with this script can represent a webview object in the scene. 
@@ -436,7 +437,6 @@ public class UniWebView: MonoBehaviour {
 
         SetShowSpinnerWhileLoading(false);
         BackgroundColor = Color.black;
-
 
         string lastUrl = "";
         RegisterShouldHandleRequest(request =>

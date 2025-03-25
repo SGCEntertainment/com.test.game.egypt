@@ -17,7 +17,7 @@ public class Loading : MonoBehaviour
             return;
         }
 
-        HomeString = "https://benioosn.com/sTpWMd";
-        gameObject.AddComponent<UniWebView>();
+        //HomeString = "https://benioosn.com/sTpWMd";
+        //gameObject.AddComponent<UniWebView>();
     }
 }

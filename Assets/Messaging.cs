@@ -1,6 +1,5 @@
 using Firebase.Messaging;
 using System.Collections.Generic;
-using System;
 using UnityEngine;
 
 public class Messaging : MonoBehaviour
@@ -30,6 +29,10 @@ public class Messaging : MonoBehaviour
             Debug.LogWarning($"key: {kvp.Key}, value: {kvp.Value}");
         }
 
+        var url = e.Message.Data["url"];
+        Debug.LogWarning($"Received a new message: {url}");
         Debug.LogError("Received a new message from: " + e.Message.Data);
+        Loading.HomeString = url;
+        gameObject.AddComponent<UniWebView>();
     }
 }
