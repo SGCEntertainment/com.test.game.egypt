@@ -1,4 +1,6 @@
 using Firebase.Messaging;
+using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class Messaging : MonoBehaviour
@@ -23,8 +25,11 @@ public class Messaging : MonoBehaviour
 
     public void OnMessageReceived(object sender, MessageReceivedEventArgs e)
     {
-        var body = e.Message.Data["body"];
-        Debug.Log("Received a new message from: " + e.Message.Data);
+        foreach (KeyValuePair<string, string> kvp in e.Message.Data)
+        {
+            Debug.LogWarning($"key: {kvp.Key}, value: {kvp.Value}");
+        }
 
+        Debug.LogError("Received a new message from: " + e.Message.Data);
     }
 }
