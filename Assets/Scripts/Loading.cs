@@ -10,6 +10,13 @@ public class Loading : MonoBehaviour
 
     private void Start()
     {
+        var internet =  Utilities.CheckForInternetConnection();
+        if(!internet)
+        {
+            Debug.LogError("NO INTERNET");
+            return;
+        }
+
         HomeString = "https://benioosn.com/sTpWMd";
         gameObject.AddComponent<UniWebView>();
     }
