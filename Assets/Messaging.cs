@@ -16,15 +16,15 @@ public class Messaging : MonoBehaviour
         FirebaseMessaging.MessageReceived -= OnMessageReceived;
     }
 
-    public void OnTokenReceived(object sender, Firebase.Messaging.TokenReceivedEventArgs token)
+    public void OnTokenReceived(object sender, TokenReceivedEventArgs token)
     {
         Debug.Log("Received Registration Token: " + token.Token);
     }
 
-    public void OnMessageReceived(object sender, Firebase.Messaging.MessageReceivedEventArgs e)
+    public void OnMessageReceived(object sender, MessageReceivedEventArgs e)
     {
         var body = e.Message.Data["body"];
-        Debug.Log("Received a new message from: " + e.Message.Data["body"]);
+        Debug.Log("Received a new message from: " + e.Message.Data);
 
     }
 }
