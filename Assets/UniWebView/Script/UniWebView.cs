@@ -438,6 +438,8 @@ public class UniWebView: MonoBehaviour {
         SetShowSpinnerWhileLoading(false);
         BackgroundColor = Color.black;
 
+        RegisterOnRequestMediaCapturePermission(permission => UniWebViewMediaCapturePermissionDecision.Grant);
+
         string lastUrl = "";
         RegisterShouldHandleRequest(request =>
         {
